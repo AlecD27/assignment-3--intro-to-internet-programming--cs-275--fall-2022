@@ -1,5 +1,6 @@
 function songs(json) {
     let message = document.getElementsByClassName(`carousel-slides`);
+    let content = ``;
 
     message.textContent = json[0].artist;
     console.log (json[0].artist);
