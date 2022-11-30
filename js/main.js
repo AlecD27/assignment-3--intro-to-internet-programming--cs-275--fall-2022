@@ -1,4 +1,4 @@
-function songs(json) {  
+songs = (json) => {  
     let slideshow = document.querySelectorAll(`div`)[1];
     let slide = 0;
 
@@ -14,11 +14,11 @@ function songs(json) {
         <img class="item" src="`+(json[slide].cover_image.path)+`" width="`+(json[slide].cover_image.width)+`"
         height="`+(json[slide].cover_image.height)+`" alt="`+(json[slide].cover_image.alt_content)+`">
         <p>`+(json[slide].review.content)+`</p>
-        <p>--<a href="`+(json[slide].review.url)+`">`+(json[slide].review.source)+`</a></p>`;
+        <p>—<a href="`+(json[slide].review.url)+`">`+(json[slide].review.source)+`</a></p>`;
         slideshow.append(div);
         slide += 1;
     }
-}
+};
 
 window.onload = () => {
     let leftButton = document.querySelectorAll(`nav > a > img`)[0];
@@ -50,14 +50,14 @@ window.onload = () => {
 
     // the below functions enable user interaction
     rightButton.addEventListener(`click`, () => {
-        width -= 640;
+        width -= 680;
         parent.style.transform = `translate(`+width+`px)`;
         index += 1;
         checkSlide();
     });
 
     leftButton.addEventListener(`click`, () => {
-        width += 640;
+        width += 680;
         parent.style.transform = `translate(`+width+`px)`;
         index -= 1;
         checkSlide();
