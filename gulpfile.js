@@ -4,6 +4,7 @@ const { src, dest, series, watch } = require(`gulp`),
     cssCompressor = require(`gulp-clean-css`),
     jsCompressor = require(`gulp-uglify`),
     jsLinter = require(`gulp-eslint`),
+    CSSLinter = require(`gulp-stylelint`),
     browserSync = require(`browser-sync`),
     reload = browserSync.reload;
 
@@ -13,6 +14,16 @@ let lintJS = () => {
     return src([`js/main.js`])
         .pipe(jsLinter())
         .pipe(jsLinter.formatEach(`compact`));
+};
+
+let lintCSS = () => {
+    return src([`css/style.css`])
+        .pipe(CSSLinter({
+            failAfterError: false,
+            reporters: [
+                {formatter: `string`, console: true}
+            ]
+        }));
 };
 
 let transpileJSForDev = () => {
@@ -55,13 +66,14 @@ let serve = () => {
     });
 }
 
-    watch(`app.js`, series(lintJS, transpileJSForDev))
+    watch(`main.js`, series(lintJS, transpileJSForDev))
         .on(`change`, reload);
 
-    watch(`style.css`, series(compressCSS))
+    watch(`main.css`, series(lintCSS, compressCSS))
         .on(`change`, reload);
 
 exports.lintJS = lintJS;
+exports.lintCSS = lintCSS;
 exports.transpileJSForDev = transpileJSForDev;
 exports.transpileJSForProd = transpileJSForProd;
 exports.compressHTML = compressHTML;
