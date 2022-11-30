@@ -55,6 +55,15 @@ function songs(json) {
 }
 
 window.onload = () => {
+  // let main = document.querySelector(`nav`);
+  // let leftBox = document.createElement(`div`);
+  // leftBox.setAttribute(`class`, `container`);
+  // leftBox.innerHTML = `<div class="box-L"></div>`;
+  // main.append(leftBox);
+  // let rightBox = document.createElement(`div`);
+  // rightBox.setAttribute(`class`, `container`);
+  // rightBox.innerHTML = `<div class="box-R"></div>`;
+  // slideshow.append(rightBox);
   let leftButton = document.querySelectorAll(`nav > a > img`)[0];
   let rightButton = document.querySelectorAll(`nav > a > img`)[1];
   leftButton.classList.add(`hidden`); // giving it the hidden class at the start

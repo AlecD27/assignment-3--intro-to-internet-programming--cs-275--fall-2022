@@ -1,7 +1,7 @@
 body {
   color: #333;
   position: absolute;
-  overflow: hidden;
+  overflow-x: hidden;
   text-align: center;
   height: 100%;
   width: 100%;
@@ -51,7 +51,7 @@ nav {
 
 .button-L {
   position: absolute;
-  left: 430px;
+  left: 360px;
   top: 250px;
   z-index: 2;
   background: rgb(233, 233, 233);
@@ -60,7 +60,7 @@ nav {
 
 .button-R {
   position: absolute;
-  right: 430px;
+  left: 950px;
   top: 250px;
   z-index: 2;
   background: rgb(233, 233, 233);
