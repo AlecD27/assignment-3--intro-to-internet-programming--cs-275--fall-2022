@@ -24,10 +24,16 @@ nav {
   position: absolute;
 }
 
+.carousel {
+  border-left: 355px solid white;
+  width: 640px;
+  height: 750px;
+  overflow: clip;
+}
+
 .carousel-slides {
   display: flex;
   justify-content: flex-start;
-  margin: 355px;
   margin-top: 0;
 }
 
@@ -38,10 +44,6 @@ nav {
   font-size: .9rem;
   margin: 0;
   height: 750px;
-  border: solid;
-  border-width: 5px;
-  border-color: white;
-  background: rgb(218, 218, 218);
 }
 
 .item {
@@ -51,7 +53,6 @@ nav {
 
 .button-L {
   position: absolute;
-  left: 360px;
   top: 250px;
   z-index: 2;
   background: rgb(233, 233, 233);
@@ -60,29 +61,11 @@ nav {
 
 .button-R {
   position: absolute;
-  left: 950px;
+  left: 590px;
   top: 250px;
   z-index: 2;
   background: rgb(233, 233, 233);
   padding: 10px;
-}
-
-.box-L {
-  position: absolute;
-  left: 0;
-  width: 450px;
-  height: 500px;
-  z-index: 1;
-  background: white;
-}
-
-.box-R {
-  position: absolute;
-  right: 0;
-  width: 450px;
-  height: 400px;
-  z-index: 1;
-  background: white;
 }
 
 .move {
