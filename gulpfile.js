@@ -14,19 +14,19 @@ async function chrome () {
 }
 
 let lintJS = () => {
-    return src([`js/app.js`])
+    return src([`js/main.js`])
         .pipe(jsLinter())
         .pipe(jsLinter.formatEach(`compact`));
 };
 
 let transpileJSForDev = () => {
-    return src(`js/app.js`)
+    return src(`js/main.js`)
         .pipe(babel())
         .pipe(dest(`temp/js`));
 };
 
 let transpileJSForProd = () => {
-    return src(`js/app.js`)
+    return src(`js/main.js`)
         .pipe(babel())
         .pipe(jsCompressor())
         .pipe(dest(`prod/js`));
@@ -39,7 +39,7 @@ let compressHTML = () => {
 };
 
 let compressCSS = () => {
-    return src('css/style.css')
+    return src('styles/main.css')
       .pipe(cssCompressor({compatibility: 'ie8'}))
       .pipe(dest('prod/css'));
 };
