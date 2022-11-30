@@ -59,11 +59,11 @@ function songs(json) {
 }
 
 window.onload = () => {
-    // let main = document.querySelector(`nav`);
+    // let box = document.querySelector(`nav`);
     // let leftBox = document.createElement(`div`);
     // leftBox.setAttribute(`class`, `container`);
     // leftBox.innerHTML = `<div class="box-L"></div>`;
-    // main.append(leftBox);
+    // box.append(leftBox);
     // let rightBox = document.createElement(`div`);
     // rightBox.setAttribute(`class`, `container`);
     // rightBox.innerHTML = `<div class="box-R"></div>`;

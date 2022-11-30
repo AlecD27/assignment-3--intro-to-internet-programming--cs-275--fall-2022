@@ -9,10 +9,6 @@ const { src, dest, series, watch } = require(`gulp`),
 
 let browserChoice = `default`;
 
-async function chrome () {
-    browserChoice = `google chrome`;
-}
-
 let lintJS = () => {
     return src([`js/main.js`])
         .pipe(jsLinter())
@@ -53,7 +49,7 @@ let serve = () => {
             baseDir: [
                 `temp`,
                 `prod`,
-                `html`
+                `.`
             ]
         }
     });
