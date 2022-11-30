@@ -55,13 +55,13 @@ function songs(json) {
 }
 
 window.onload = () => {
-  // let leftButton = document.querySelectorAll(`nav > a > img`)[0];
-  // let arrows = document.querySelectorAll(`container > img`);
-  // const LEFT_ARROW = 0;
-  // const RIGHT_ARROW = 1;
-  // arrows[LEFT_ARROW].classList.add(`button`);
-  
-  //let rightButton = document.querySelectorAll(`nav > a > img`)[1];
+  let leftButton = document.querySelectorAll(`nav > a > img`)[0];
+  let rightButton = document.querySelectorAll(`nav > a > img`)[1];
+  leftButton.classList.add(`hidden`); // giving it the hidden class at the start
+  leftButton.classList.add(`button-L`);
+  rightButton.classList.add(`button-R`);
+  let movement = document.querySelectorAll(`div`)[1];
+  movement.classList.add(`move`);
   let parent = document.getElementsByClassName(`carousel-slides`)[0];
   let body = document.querySelector(`body`);
   let script = document.createElement(`script`);
@@ -70,37 +70,36 @@ window.onload = () => {
   let width = 0;
   let index = 0;
 
-  // leftButton.classList.add(`hidden button`);
-  // rightButton.classList.add(`button`);
+  let checkSlide = () => {
+      if (index > 0 && index < 3) {
+          leftButton.classList.remove(`hidden`);
+          rightButton.classList.remove(`hidden`);
+      } else if (index === 0) {
+          leftButton.classList.add(`hidden`);
+      } else if (index === 3){
+          rightButton.classList.add(`hidden`);
+      }
+  };
 
-  // let checkSlide = () => {
-  //     if (index > 0 && index < 3) {
-  //         leftButton.classList.remove(`hidden`);
-  //         rightButton.classList.remove(`hidden`);
-  //     } else if (index === 0) {
-  //         leftButton.classList.add(`hidden`);
-  //     } else if (index === 3){
-  //         rightButton.classList.add(`hidden`);
-  //     }
-  // };
-
-  // rightButton.addEventListener(`click`, () => {
-  //     width -= 465;
-  //     parent.style.transform = `translate(`+width+`px)`;
-  //     index += 1;
-  //     checkSlide();
-  // });
-  document.addEventListener(`keydown`, (e) => {
-    if (e.key === `ArrowRight` && index < 3) {
+  rightButton.addEventListener(`click`, () => {
       width -= 650;
       parent.style.transform = `translate(`+width+`px)`;
       index += 1;
       checkSlide();
-    } else if (e.key === `ArrowLeft` && index > 0) {
-      width += 650;
-      parent.style.transform = `translate(`+width+`px)`;
-      index -= 1;
-      checkSlide();
+  });
+
+  leftButton.addEventListener(`click`, () => {
+    width += 650;
+    parent.style.transform = `translate(`+width+`px)`;
+    index -= 1;
+    checkSlide();
+  });
+
+  document.addEventListener(`keydown`, (e) => {
+    if (e.key === `ArrowRight` && !rightButton.classList.contains(`hidden`)) {
+      rightButton.click();
+    } else if (e.key === `ArrowLeft` && !leftButton.classList.contains(`hidden`)) {
+      leftButton.click();
     }
   });
 }
