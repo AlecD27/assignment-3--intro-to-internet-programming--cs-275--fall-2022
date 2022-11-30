@@ -2,6 +2,7 @@ function songs(json) {
     let slideshow = document.querySelectorAll(`div`)[1];
     let slide = 0;
 
+    // looping the information for each slide
     for (let i = 0; i < 4; i++) {
         let div = document.createElement(`div`);
         div.setAttribute(`class`, `container`);
@@ -26,15 +27,16 @@ window.onload = () => {
     leftButton.classList.add(`button-L`);
     rightButton.classList.add(`button-R`);
     let movement = document.querySelectorAll(`div`)[1];
-    movement.classList.add(`move`);
-    let parent = document.getElementsByClassName(`carousel-slides`)[0];
+    movement.classList.add(`move`); // adding a class that makes the slides transition into each other
     let body = document.querySelector(`body`);
     let script = document.createElement(`script`);
     script.setAttribute(`src`,`json/data.json`);
-    body.append(script);
+    body.append(script); // link to the datasheet is put at the bottom of body
+    let parent = document.getElementsByClassName(`carousel-slides`)[0];
     let width = 0;
     let index = 0;
 
+    // below checks to see if the left and right button are needed
     let checkSlide = () => {
         if (index > 0 && index < 3) {
             leftButton.classList.remove(`hidden`);
