@@ -1,5 +1,5 @@
 function songs(json) {  
-  let slideshow = document.querySelectorAll(`div`)[1];
+    let slideshow = document.querySelectorAll(`div`)[1];
   
     //slide 1
     let div = document.createElement(`div`);
@@ -9,7 +9,8 @@ function songs(json) {
         <h3>`+(json[0].album)+`</h3>
         <a href="`+(json[0].url)+`">`+(json[0].artist)+`</a>
       </div>
-      <img class="item" src="`+(json[0].cover_image.path)+`" width="`+(json[0].cover_image.width)+`" height="`+(json[0].cover_image.height)+`" alt="`+(json[0].cover_image.alt_content)+`">
+      <img class="item" src="`+(json[0].cover_image.path)+`" width="`+(json[0].cover_image.width)+`"
+      height="`+(json[0].cover_image.height)+`" alt="`+(json[0].cover_image.alt_content)+`">
       <p>`+(json[0].review.content)+`</p>
       <p>--<a href="`+(json[0].review.url)+`">`+(json[0].review.source)+`</a></p>`;
     slideshow.append(div);
@@ -19,10 +20,11 @@ function songs(json) {
     div2.setAttribute(`class`, `container`);
     div2.innerHTML = 
       `<div class="item">
-        <h3>BLACK</h3>
+        <h3>`+(json[1].album)+`</h3>
         <a href="`+(json[1].url)+`">`+(json[1].artist)+`</a>
       </div>
-      <img class="item" src="`+(json[1].cover_image.path)+`" width="`+(json[1].cover_image.width)+`" height="`+(json[1].cover_image.height)+`" alt="`+(json[1].cover_image.alt_content)+`">
+      <img class="item" src="`+(json[1].cover_image.path)+`" width="`+(json[1].cover_image.width)+`"
+      height="`+(json[1].cover_image.height)+`" alt="`+(json[1].cover_image.alt_content)+`">
       <p>`+(json[1].review.content)+`</p>
       <p>--<a href="`+(json[1].review.url)+`">`+(json[1].review.source)+`</a></p>`;
     slideshow.append(div2);
@@ -35,7 +37,8 @@ function songs(json) {
         <h3>`+(json[2].album)+`</h3>
         <a href="`+(json[2].url)+`">`+(json[2].artist)+`</a>
       </div>
-      <img class="item" src="`+(json[2].cover_image.path)+`" width="`+(json[2].cover_image.width)+`" height="`+(json[2].cover_image.height)+`" alt="`+(json[2].cover_image.alt_content)+`">
+      <img class="item" src="`+(json[2].cover_image.path)+`" width="`+(json[2].cover_image.width)+`"
+      height="`+(json[2].cover_image.height)+`" alt="`+(json[2].cover_image.alt_content)+`">
       <p>`+(json[2].review.content)+`</p>
       <p>--<a href="`+(json[2].review.url)+`">`+(json[2].review.source)+`</a></p>`;
     slideshow.append(div3);
@@ -48,7 +51,8 @@ function songs(json) {
         <h3>`+(json[3].album)+`</h3>
         <a href="`+(json[3].url)+`">`+(json[3].artist)+`</a>
       </div>
-      <img class="item" src="`+(json[3].cover_image.path)+`" width="`+(json[3].cover_image.width)+`" height="`+(json[3].cover_image.height)+`" alt="`+(json[3].cover_image.alt_content)+`">
+      <img class="item" src="`+(json[3].cover_image.path)+`" width="`+(json[3].cover_image.width)+`"
+      height="`+(json[3].cover_image.height)+`" alt="`+(json[3].cover_image.alt_content)+`">
       <p>`+(json[3].review.content)+`</p>
       <p>--<a href="`+(json[3].review.url)+`">`+(json[3].review.source)+`</a></p>`;
     slideshow.append(div4);
@@ -98,17 +102,17 @@ window.onload = () => {
     });
 
     leftButton.addEventListener(`click`, () => {
-      width += 650;
-      parent.style.transform = `translate(`+width+`px)`;
-      index -= 1;
-      checkSlide();
+        width += 650;
+        parent.style.transform = `translate(`+width+`px)`;
+        index -= 1;
+        checkSlide();
     });
 
     document.addEventListener(`keydown`, (e) => {
-      if (e.key === `ArrowRight` && !rightButton.classList.contains(`hidden`)) {
-        rightButton.click();
-      } else if (e.key === `ArrowLeft` && !leftButton.classList.contains(`hidden`)) {
-        leftButton.click();
-      }
+        if (e.key === `ArrowRight` && !rightButton.classList.contains(`hidden`)) {
+            rightButton.click();
+        } else if (e.key === `ArrowLeft` && !leftButton.classList.contains(`hidden`)) {
+            leftButton.click();
+        }
     });
-}
+};
