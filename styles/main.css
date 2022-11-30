@@ -3,6 +3,7 @@ body {
   position: absolute;
   overflow-x: hidden;
   text-align: center;
+  font-family: "Open Sans";
   height: 100%;
   width: 100%;
   margin: 0 auto;
@@ -10,18 +11,22 @@ body {
 
 header {
   text-align: center;
-  font-family: sans-serif;
-  font-weight: 100;
   padding: 25px;
 }
 
 p {
   padding-top: 20px;
   text-align: left;
+  line-height: 1.4;
 }
 
 nav {
   position: absolute;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 38px;
 }
 
 .carousel {
@@ -41,9 +46,10 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  font-size: .9rem;
+  font-size: 16px;
   margin: 0;
   height: 750px;
+  padding-right: 40px;
 }
 
 .item {
