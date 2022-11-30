@@ -1,4 +1,4 @@
-songs = (json) => {  
+function songs(json) { // I needed to use function hoisting here because otherwise, the browser would say songs wasn't declared
     let slideshow = document.querySelectorAll(`div`)[1];
     let slide = 0;
 
@@ -18,7 +18,7 @@ songs = (json) => {
         slideshow.append(div);
         slide += 1;
     }
-};
+}
 
 window.onload = () => {
     let leftButton = document.querySelectorAll(`nav > a > img`)[0];
