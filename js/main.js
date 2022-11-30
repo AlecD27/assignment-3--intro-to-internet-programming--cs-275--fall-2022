@@ -3,9 +3,9 @@ function songs(json) {
     let slide = 0;
 
     for (let i = 0; i < 4; i++) {
-      let div = document.createElement(`div`);
-      div.setAttribute(`class`, `container`);
-      div.innerHTML = 
+        let div = document.createElement(`div`);
+        div.setAttribute(`class`, `container`);
+        div.innerHTML = 
         `<div class="item">
           <h3>`+(json[slide].album)+`</h3>
           <a href="`+(json[slide].url)+`">`+(json[slide].artist)+`</a>
@@ -14,8 +14,8 @@ function songs(json) {
         height="`+(json[slide].cover_image.height)+`" alt="`+(json[slide].cover_image.alt_content)+`">
         <p>`+(json[slide].review.content)+`</p>
         <p>--<a href="`+(json[slide].review.url)+`">`+(json[slide].review.source)+`</a></p>`;
-      slideshow.append(div);
-      slide += 1;
+        slideshow.append(div);
+        slide += 1;
     }
 }
 
