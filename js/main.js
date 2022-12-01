@@ -13,6 +13,7 @@ function songs(json) { // I needed to use function hoisting here because otherwi
         </div>
         <img class="item" src="`+(json[slide].cover_image.path)+`" width="`+(json[slide].cover_image.width)+`"
         height="`+(json[slide].cover_image.height)+`" alt="`+(json[slide].cover_image.alt_content)+`">
+        <p class="center">Credit: <a href="`+(json[slide].cover_image.url)+`">`+(json[slide].cover_image.credit)+`</a></p>
         <p>`+(json[slide].review.content)+`</p>
         <p>—<a href="`+(json[slide].review.url)+`">`+(json[slide].review.source)+`</a></p>`;
         slideshow.append(div);
